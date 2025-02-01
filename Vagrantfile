@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", type: "dhcp"
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install -y docker.io docker-compose
+    sudo apt-get install -y docker.io docker-compose nodejs npm
     sudo systemctl enable docker
   SHELL
 end
