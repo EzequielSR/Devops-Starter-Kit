@@ -1,13 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const PedidoController = require('../controllers/pedidoController');
 
-router.get('/', (req, res) => {
-    res.json({ message: 'Lista de pedidos '})
-})
+router.get('/', PedidoController.listarPedidos)
 
-router.post('/', (req, res) => {
-    const { cliente, items } = req.body;
-    res.json({ message: 'Pedido criado', cliente, items});
-})
+router.post('/', PedidoController.criarPedido)
 
 module.exports = router;

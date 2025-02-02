@@ -1,9 +1,18 @@
-class Pedido {
-    constructor(cliente, items) {
-        this.cliente = cliente;
-        this.items = items;
-        this.data = new Date();
-    }
-}
+const mongoose = require('mongoose');
 
-module.exports = Pedido;
+const PedidoSchema = new mongoose.Schema( {
+    cliente: {
+        type: String,
+        required: true,
+    },
+    items: {
+        type: [String],
+        required: true,
+    },
+    data: {
+        type: Date,
+        default: Date.now,
+    },
+})
+
+module.exports = mongoose.model('Pedido', PedidoSchema);
