@@ -14,8 +14,4 @@ const connectDB = async () => {
     }
 }
 
-// const db = {
-//     pedidos: []
-// }
-
 module.exports = connectDB;
