@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sistema-pedidos
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sistema-pedidos
+  template:
+    metadata:
+      labels:
+        app: sistema-pedidos
+    spec:
+      containers:
+        - name: sistema-pedidos
+          image: sistema-pedidos:latest
+          ports:
+            - containerPort: 3000
