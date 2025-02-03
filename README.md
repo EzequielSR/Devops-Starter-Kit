@@ -187,31 +187,44 @@ A estrutura do projeto está organizada da seguinte forma:
 
 ```plaintext
 Sistema_Pedidos-DevOps/
-├── src/                  # Código-fonte da aplicação
-│   ├── config/           # Configurações (ex: conexão com o MongoDB)
-│   ├── controllers/      # Lógica de controle (ex: PedidoController)
-│   ├── models/           # Modelos de dados (ex: Pedido)
-│   ├── routes/           # Rotas da API (ex: pedidos.js)
-│   ├── utils/            # Utilitários (ex: validações)
-│   ├── app.js            # Configuração do Express
-│   └── server.js         # Inicialização do servidor
+├── src/                 
+│   ├── config/
+|   |    └── db.js
+|   |          
+│   ├── controllers/
+|   |    └── pedidoController.js
+|   |
+│   ├── models/
+|   |    └── Pedido.js
+|   |
+│   ├── routes/
+|   |    └── pedidosRoutes.js 
+|   |
+│   ├── utils/
+|   |    └── validators.js
+|   |    
+│   ├── app.js            
+│   └── server.js         
 |
-├── tests/                # Testes automatizados
-│   ├── unit/             # Testes unitários
-│   └── integration/      # Testes de integração
+├── tests/               
+│   ├── unit/
+|   |    └── PedidoController.test.js
+|   |            
+│   └── integration/
+|        └── pedidos.test.js      
 |
 |
-├── kubernetes/           # Configurações do Kubernetes
-│   ├── deployment.yml    # Arquivo de deployment
-│   └── service.yml       # Arquivo de serviço
+├── kubernetes/          
+│   ├── deployment.yml   
+│   └── service.yml      
 |
-├── vagrant/              # Configurações do Vagrant
-│   └── Vagrantfile       # Arquivo de configuração do Vagrant
+├── vagrant/              
+│   └── Vagrantfile       
 |
-├── .env                  # Variáveis de ambiente
-├── .gitignore            # Arquivos ignorados pelo Git
-├── package.json          # Dependências e scripts do Node.js
-├── Dockerfile            # Arquivo para construir a imagem do Node.js
-├── docker-compose.yml    # Arquivo para orquestrar os containers
-└── README.md             # Documentação do projeto
+├── .env                 
+├── .gitignore            
+├── package.json          
+├── Dockerfile           
+├── docker-compose.yml    
+└── README.md             
 ```
