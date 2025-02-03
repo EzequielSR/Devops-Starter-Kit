@@ -8,7 +8,7 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
 - [Requisitos](#requisitos-)
 - [Funcionalidades](#funcionalidades-)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas-)
-- [Como Executar](#como-executar)
+- [Como Executar](#como-executar-)
   - [Localmente](#localmente)
   - [Com Docker](#com-docker)
   - [Com Vagrant](#com-vagrant)
@@ -75,7 +75,7 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
 
 3. **Inicie o MongoDB localmente**(ou use um serviço como MongoDB Atlas). <br>
 
-4. **Configure a variável de ambiente *MONGO_URI* no arquivo *.env* ** <br>
+4. Configure a variável de ambiente *MONGO_URI* no arquivo *.env* <br>
    ```bash
    MONGO_URI=mongodb://localhost:27017/sistema-pedidos
    ```
@@ -85,9 +85,65 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
    npm start
    ```
    
-6. **Acesse a aplicação *http://localhost:3000* ** <br>
+6. Acesse a aplicação *http://localhost:3000* <br>
+---
+
+## Com Docker 🐳
+
+1. Contrua e execute os containers:
+   ```bash
+   docker-compose up --build
+   ```
+
+2. Acesse a aplicação em: *https://localhost:3000*
 
 ---
+
+## Com Vagrant 🖥
+
+1. Inicie a máquina virtual no terminal:
+   ```bash
+   vagrant up
+   vagrant ssh
+   ```
+
+2. Dentro da VM, navegue até o diretório do projeto e execute o Docker Compose:
+   ```bash
+   cd /vagrant
+   docker-compose up --build
+   ```
+
+3. Acesse a aplicação em: *http://localhost:3000*
+
+---
+
+## Com Kubernetes 🔱
+
+1. Inicie o Minikube:
+   ```bash
+   minikube start
+   ```
+
+2. Construa a imagem do Docker dentro do Minikube:
+   ```bash
+   eval $(minikube docker-env)
+   docker build 0t sistema-pedidos:latest .
+   ```
+
+3. Aplique os arquivos de configuração do Kubernetes:
+   ```bash
+   kubectl apply -f kubernetes/deployment.yml
+   kubectl apply -f kubernetes/service.yml
+   ```
+
+4. Obtenha o IP do Minikube e acesse a aplicação:
+   ```bash
+   minikube ip
+   ```
+
+Acesse *http://<minikube-ip>:<porta>*.
+
+
 
 ## Testes 🧪
 
