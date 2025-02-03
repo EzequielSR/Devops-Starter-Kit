@@ -2,19 +2,18 @@ const request = require('supertest');
 const app = require('../../src/app');
 const Pedido = require('../../src/models/Pedido');
 
-// Mock do modelo Pedido
 jest.mock('../../src/models/Pedido');
 
 describe('Testes de Integração - Pedidos', () => {
     afterEach(() => {
-        jest.clearAllMocks(); // Limpa os mocks após cada teste
+        jest.clearAllMocks();
     });
 
     describe('GET /pedidos', () => {
         it('deve retornar uma lista de pedidos', async () => {
             const mockPedidos = [
-                { cliente: 'Cliente 1', items: ['Item 1', 'Item 2'], data: new Date() },
-                { cliente: 'Cliente 2', items: ['Item 3', 'Item 4'], data: new Date() },
+                {cliente: 'Cliente 1', items: ['Item 1', 'Item 2'], data: new Date().toISOString()},
+                {cliente: 'Cliente 2', items: ['Item 3', 'Item 4'], data: new Date().toISOString()},
             ];
             Pedido.find.mockResolvedValue(mockPedidos);
 
@@ -39,14 +38,18 @@ describe('Testes de Integração - Pedidos', () => {
 
     describe('POST /pedidos', () => {
         it('deve criar um novo pedido', async () => {
-            const mockPedido = { cliente: 'Cliente 1', items: ['Item 1', 'Item 2'], data: new Date() };
-            Pedido.mockImplementation(()=>({
-                save: jest.fn().mockResolvedValue(mockPedido),
-            }))
+            const mockPedido = {
+                _id: '65f4c8f8e4b0a1a2b3c4d5e6',
+                cliente: 'Cliente 1',
+                items: ['Item 1', 'Item 2'],
+                data: new Date().toISOString(),
+                save: jest.fn().mockResolvedValue(this)
+            };
+            Pedido.mockImplementation(() => mockPedido)
 
             const response = await request(app)
                 .post('/pedidos')
-                .send({ cliente: 'Cliente 1', items: ['Item 1', 'Item 2'] });
+                .send({cliente: 'Cliente 1', items: ['Item 1', 'Item 2']});
 
             expect(response.status).toBe(201);
             expect(response.body).toMatchObject({
@@ -59,7 +62,7 @@ describe('Testes de Integração - Pedidos', () => {
         it('deve retornar erro 400 se os itens não forem fornecidos', async () => {
             const response = await request(app)
                 .post('/pedidos')
-                .send({ cliente: 'Cliente 1', items: [] });
+                .send({cliente: 'Cliente 1', items: []});
 
             expect(response.status).toBe(400);
             expect(response.body).toEqual({
