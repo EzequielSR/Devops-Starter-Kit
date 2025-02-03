@@ -97,7 +97,7 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
    docker-compose up --build
    ```
 
-2. Acesse a aplicação em: *https://localhost:3000*
+2. Acesse a aplicação em: **http://localhost:3000**
 
 ---
 
