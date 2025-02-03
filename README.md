@@ -87,7 +87,7 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
    npm start
    ```
    
-6. Acesse a aplicação *http://localhost:3000* <br>
+6. Acesse a aplicação **http://localhost:3000** <br>
 ---
 
 ## Com Docker 🐳
