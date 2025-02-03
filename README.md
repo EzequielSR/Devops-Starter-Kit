@@ -159,6 +159,25 @@ O projeto inclui testes unitários e de integração. Para executar os testes:
    ```bash
      npm test
    ```
+   
+### Estrutura dos Testes:
+
+* Testes Unitários:
+ * Verificam as funções do controlador (*PedidoController*).
+ * Localizado em: *tests/unit/*.
+
+* Testes de Integração:
+  * Verificam as rotas da API.
+  * Localizados em: *tests/integration/*.
+ 
+    ```plaintext
+    tests/
+    ├── integration/                 
+    │   └── pedidos.test.js
+    |
+    └── unity/                 
+        └── PedidoController.test.js
+    ```
 
 ---
 
