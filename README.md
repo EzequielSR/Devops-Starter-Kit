@@ -9,12 +9,12 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
 - [Funcionalidades](#funcionalidades-)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas-)
 - [Como Executar](#como-executar-)
-  - [Localmente](#localmente)
-  - [Com Docker](#com-docker)
-  - [Com Vagrant](#com-vagrant)
-  - [Com Kubernetes](#com-kubernetes)
+  - [Localmente](#localmente-)
+  - [Com Docker](#com-docker-)
+  - [Com Vagrant](#com-vagrant-)
+  - [Com Kubernetes](#com-kubernetes-)
 - [Testes](#testes-)
-- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Estrutura do Projeto](#estrutura-do-projeto-)
   
 
 ---
@@ -62,6 +62,8 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
 ---
 
 ## Como Executar ⁉
+
+### Localmente 🚩
 
 1. **Clone o repositório**
    ```bash
