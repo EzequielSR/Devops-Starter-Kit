@@ -115,7 +115,7 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
    docker-compose up --build
    ```
 
-3. Acesse a aplicação em: *http://localhost:3000*
+3. Acesse a aplicação em: **http://localhost:3000**
 
 ---
 
@@ -143,7 +143,7 @@ Um sistema de pedidos online para restaurantes, desenvolvido com Node.js, MongoD
    minikube ip
    ```
 
-Acesse *http://<minikube-ip>:<porta>*.
+Acesse **http://<minikube-ip>:<porta>**.
 
 
 
