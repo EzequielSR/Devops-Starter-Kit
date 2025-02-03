@@ -217,14 +217,13 @@ Sistema_Pedidos-DevOps/
 ├── kubernetes/          
 │   ├── deployment.yml   
 │   └── service.yml      
-|
-├── vagrant/              
-│   └── Vagrantfile       
+|       
 |
 ├── .env                 
 ├── .gitignore            
 ├── package.json          
 ├── Dockerfile           
 ├── docker-compose.yml    
+├── Vagrantfile    
 └── README.md             
 ```
